@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
   compileSdkVersion versions.compileSdk
@@ -33,6 +34,8 @@ dependencies {
   implementation deps.androidxAnnotations
   implementation deps.androidxCore
   implementation deps.androidxExifInterface
+  implementation deps.kotlin
+
   testImplementation deps.junit
   testImplementation deps.truth
   testImplementation deps.robolectric

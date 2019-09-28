@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import com.squareup.picasso3.Initializer;
 import com.squareup.picasso3.Picasso;
+import com.squareup.picasso3.StatsEventListener;
 
 /**
  * This instance is automatically initialized with defaults that are suitable to most
@@ -35,7 +36,9 @@ public final class PicassoProvider {
           if (autoContext == null) {
             throw new NullPointerException("context == null");
           }
-          instance = new Picasso.Builder(autoContext).build();
+          instance = new Picasso.Builder(autoContext)
+              .addEventListener(new StatsEventListener())
+              .build();
         }
       }
     }

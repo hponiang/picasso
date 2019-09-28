@@ -190,7 +190,7 @@ class Dispatcher {
       return;
     }
 
-    hunter = forRequest(action.picasso, this, cache, stats, action);
+    hunter = forRequest(action.picasso, this, cache, action);
     hunter.future = service.submit(hunter);
     hunterMap.put(action.request.key, hunter);
     if (dismissFailed) {
